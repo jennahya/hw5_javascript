@@ -8,6 +8,8 @@ window.addEventListener("load", function () {
   video.autoplay = false;
   video.loop = false;
 
+  let slider = document.querySelector("#slider");
+  video.volume = slider.value / 100;
   updateVolumeDisplay();
 
   document.querySelector("#play").addEventListener("click", function () {
@@ -66,5 +68,6 @@ function updateVolumeDisplay() {
   var volPercent = Math.round(video.volume * 100);
   document.querySelector("#volume").textContent = volPercent + "%";
 }
+
 
 
